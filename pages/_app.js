@@ -4,7 +4,7 @@ import "../styles/home.css";
 import "../styles/about.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "../components/header/header";
+import Header from "../components/header/Header.js";
 
 import Head from "next/head";
 
