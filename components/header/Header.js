@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 export default function Header() {
