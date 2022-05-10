@@ -1,7 +1,23 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import "../styles/header.css";
+import "../styles/home.css";
+import "../styles/about.css";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../components/header/header";
+
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <link rel="icon" href="/images/logo.jpg" />
+      </Head>
+      <Header />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -1,0 +1,117 @@
+#anis,
+#about {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+#anis .ani-cards {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+#anis .ani-cards > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+#anis .ani-cards .lottie-ani {
+  align-self: center;
+  width: 15vw;
+  height: 15vw;
+}
+
+#anis .ani-cards .head {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+#anis .ani-cards .desc {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 800px) {
+  #anis .ani-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #anis .ani-cards .lottie-ani {
+    align-self: center;
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+/* #about {
+  height: 100vh;
+} */
+
+#about .layer-img {
+  filter: invert(1);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+}
+
+#about .all-content {
+  width: 100%;
+  background-color: black;
+}
+
+#about .all-content .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#about .all-content .heading span {
+  font-size: medium;
+  color: blueviolet;
+  letter-spacing: 7px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+#about .all-content .heading h2 {
+  font-size: 10rem;
+  font-family: "Jost", sans-serif;
+  color: white;
+  margin-bottom: 50px;
+}
+
+#about .all-content .heading p {
+  padding-left: 10%;
+  padding-right: 10%;
+  color: grey;
+  font-size: 1.2rem;
+}
+
+#about .about-carousel {
+  background-color: black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#about .about-carousel div {
+  width: 100%;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#about .about-carousel div img {
+  object-fit: cover;
+  height: 100%;
+  width: auto;
+}
