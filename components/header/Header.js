@@ -45,18 +45,22 @@ export default function Header() {
         <h1>TAKEMYCAR</h1>
       </div>
       <nav className="center no-mobile">
-        <a href="/#home">Home</a>
-        <a href="/#about">About</a>
-        <a href="/#team">Team</a>
-        <a href="/#contact">Contact</a>
+        <Link href="/#home">Home</Link>
+        <Link href="/#about">About</Link>
+        <Link href="/#team">Team</Link>
+        <Link href="/#contact">Contact</Link>
       </nav>
       <div className="right-side">
-        <a href="https://google.com" target="_blank">
-          <AiFillLinkedin color={icon_color} className="no-mobile" />
-        </a>
-        <a href="https://google.com" target="_blank">
-          <AiOutlineTwitter color={icon_color} className="no-mobile" />
-        </a>
+        <Link href="https://google.com" target="_blank">
+          <a>
+            <AiFillLinkedin color={icon_color} className="no-mobile" />
+          </a>
+        </Link>
+        <Link href="https://google.com" target="_blank">
+          <a>
+            <AiOutlineTwitter color={icon_color} className="no-mobile" />
+          </a>
+        </Link>
         <div
           className="ham no-pc"
           onClick={() => {
@@ -74,18 +78,18 @@ export default function Header() {
                 navi();
               }}
             >
-              <a href="/#home" aria-label="Home">
+              <Link href="/#home" aria-label="Home">
                 Home
-              </a>
+              </Link>
             </li>
             <li
               onClick={() => {
                 navi();
               }}
             >
-              <a href="/#about" aria-label="About">
+              <Link href="/#about" aria-label="About">
                 About
-              </a>
+              </Link>
             </li>
 
             <li
@@ -93,9 +97,9 @@ export default function Header() {
                 navi();
               }}
             >
-              <a href="/#team" aria-label="Team">
+              <Link href="/#team" aria-label="Team">
                 Team
-              </a>
+              </Link>
             </li>
 
             <li
@@ -103,9 +107,9 @@ export default function Header() {
                 navi();
               }}
             >
-              <a href="/#contact" aria-label="Contact us">
+              <Link href="/#contact" aria-label="Contact us">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
