@@ -30,11 +30,13 @@
 #home .left-side h2 {
   font-size: 4rem;
   text-align: right;
+  font-weight: 600;
 }
 
 #home .left-side p {
   text-align: right;
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 #home .right-side {
@@ -73,19 +75,19 @@
   }
 
   #home .left-side h2 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     text-align: left;
   }
 
   #home .left-side p {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   #home .right-side {
     width: 70%;
-    margin-bottom: -80vw;
-    margin-top: 15vw;
+    margin-bottom: -40vw;
+    margin-top: 5vw;
     bottom: 0;
     margin-left: 0;
   }

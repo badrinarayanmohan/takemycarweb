@@ -1,4 +1,5 @@
 import Head from "next/head";
+// import Image from "next/image";
 
 import Lottie from "lottie-react";
 import callSupportJSON from "/public/lottie/callSupport.json";
@@ -52,11 +53,35 @@ export default function Home() {
   // };
 
   const responsiveDataCar = {
-    default: {
-      breakpoint: { max: 999999, min: 0 },
+    pc: {
+      breakpoint: {
+        max: 999999,
+        min: 801,
+      },
       items: 3,
     },
+    mobile: {
+      breakpoint: {
+        max: 800,
+        min: 0,
+      },
+      items: 1,
+    },
   };
+  const presentation = [
+    "/images/presentation/1.png",
+    "/images/presentation/2.png",
+    "/images/presentation/3.png",
+    "/images/presentation/4.png",
+    "/images/presentation/5.png",
+    "/images/presentation/6.png",
+    "/images/presentation/7.png",
+    "/images/presentation/8.png",
+    "/images/presentation/9.png",
+    "/images/presentation/10.png",
+    "/images/presentation/11.png",
+    "/images/presentation/12.png",
+  ];
   return (
     <div id="index">
       <Head>
@@ -65,11 +90,17 @@ export default function Home() {
       <section id="home">
         <img src={"/images/layersss.png"} alt="" className="layers-img" />
         <div className="left-side">
-          <h2>Some great line here.</h2>
-          <p>App will launch on so and so date.</p>
+          <h2>
+            India's first <br />
+            most derisked <br />
+            peer to peer <br />
+            car sharing <br />
+            platform & service.
+          </h2>
+          <p>App will launch on June 15, 2022.</p>
         </div>
         <div className="right-side">
-          <img src={"/images/iphone-pic.webp"} alt="" />
+          <img src={"/images/iphone.png"} alt="" />
         </div>
       </section>
       <section id="anis">
@@ -97,10 +128,22 @@ export default function Home() {
             <span>ABOUT US</span>
             <h2>We make sh*t happen</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              TakeMyCar's founder's vision is to always bring software to
+              everyone in the globe at very affordable prices. Having worked on
+              his first firm where he built software for small to middle scale
+              enterprises and sold software at one tenth the costs, similarly
+              <br />
+              <br />
+              TakeMyCar's vision is to bring cars and its related software at a
+              very cheap price.
+              <br />
+              <br />
+              TakeMyCar was born when the founder himself had this problem and
+              hence this company was formed.
+              <br />
+              <br />
+              We offer luxury cars at a fraction of the local car rental
+              companies.
             </p>
           </div>
         </div>
@@ -110,44 +153,52 @@ export default function Home() {
           showDots={false}
           infinite={true}
           autoPlay={true}
-          autoPlaySpeed={1000}
+          autoPlaySpeed={2500}
           keyBoardControl={true}
-          pauseOnHover={false}
+          pauseOnHover={true}
           responsive={responsiveDataCar}
           arrows={false}
           // customTransition="all .5"
           transitionDuration={500}
           containerClass="carousel-container"
           dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
+          itemClass="carousel-item-class"
           className="about-carousel"
         >
           <div>
-            <img
-              src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?fit=crop&format=jpg&crop=4560,2565,x790,y784,safe"
-              alt=""
-            />
+            <img src="/images/presentation/1.png" alt="" />
           </div>
           <div>
-            <img
-              src="https://imageio.forbes.com/specials-images/imageserve/5d37033a95e0230008f64eb2/2020-Aston-Martin-Rapide-E/0x0.jpg?fit=crop&format=jpg&crop=3000,1687,x0,y157,safe"
-              alt=""
-            />
+            <img src="/images/presentation/2.png" alt="" />
           </div>
           <div>
-            <img
-              src="https://imageio.forbes.com/specials-images/imageserve/5d37046395e0230008f64edf/2020-Ford-Mustang-Shelby-GT500/0x0.jpg?fit=crop&format=jpg&crop=2552,1437,x299,y201,safe"
-              alt=""
-            />
+            <img src="/images/presentation/3.png" alt="" />
           </div>
-          <div>
-            <img
-              src="https://imageio.forbes.com/specials-images/imageserve/5d35eb4795e0230008f63724/2020-Tesla-Roadster/0x0.jpg?fit=crop&format=jpg&crop=3072,1728,x282,y157,safe"
-              alt=""
-            />
-          </div>
+          {presentation.map((loc, ind) => {
+            return (
+              <div key={ind}>
+                <img src={loc} alt={"presentation img-" + ind} />
+              </div>
+            );
+          })}
         </Carousel>
       </section>
+      <section id="team">
+        <div className="ceo">
+          <div className="left-side">Some text</div>
+          <div className="right-side">
+            <div className="img-container"></div>
+            <span className="head">Badri</span>
+            <span className="desg">Founder & CEO</span>
+          </div>
+        </div>
+        <div className="full-team">
+          <h2>All stars roster</h2>
+          <p>Some Description</p>
+          {/* {cards here} */}
+        </div>
+      </section>
+      <section id="contact"></section>
     </div>
   );
 }
