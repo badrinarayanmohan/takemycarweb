@@ -6,6 +6,7 @@ import Lottie from "lottie-react";
 import callSupportJSON from "/public/lottie/callSupport.json";
 import carSafeJSON from "/public/lottie/carSafe.json";
 import moneyJSON from "/public/lottie/money.json";
+import indiaJSON from "/public/lottie/india.json";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -21,8 +22,8 @@ export default function Home() {
       aniJson: carSafeJSON,
     },
     {
-      heading: "Cheap",
-      description: "Easy on your pockets",
+      heading: "Pocket Friendly",
+      description: "Save or Earn; Your choice.",
       aniJson: moneyJSON,
     },
     {
@@ -31,9 +32,9 @@ export default function Home() {
       aniJson: callSupportJSON,
     },
     {
-      heading: "Cheap",
-      description: "Easy on your pockets",
-      aniJson: moneyJSON,
+      heading: "Made in India",
+      description: "AtmaNirbhar Bharat",
+      aniJson: indiaJSON,
     },
   ];
   const responsiveDataCar = {
