@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "../styles/header.css";
 import "../styles/home.css";
 import "../styles/about.css";
+import "../styles/team.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/header/Header.js";

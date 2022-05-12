@@ -1,5 +1,5 @@
 import Head from "next/head";
-// import Image from "next/image";
+import Image from "next/image";
 
 import Lottie from "lottie-react";
 import callSupportJSON from "/public/lottie/callSupport.json";
@@ -68,19 +68,39 @@ export default function Home() {
   car sharing
   platform & service.`;
 
-  const aboutText = `TakeMyCar's founder's vision is to always bring software to
-  everyone in the globe at very affordable prices. Having worked on
-  his first firm where he built software for small to middle scale
-  enterprises and sold software at one tenth the costs, similarly
+  const aboutText = `TakeMyCar's founder's vision is to always bring software to everyone in the globe at very affordable prices. Having worked on his first firm where he built software for small to middle scale enterprises and sold software at one tenth the costs, similarly
 
-  TakeMyCar's vision is to bring cars and its related software at a
-  very cheap price.
+  TakeMyCar's vision is to bring cars and its related software at a very cheap price.
 
-  TakeMyCar was born when the founder himself had this problem and
-  hence this company was formed.
+  TakeMyCar was born when the founder himself had this problem and hence this company was formed.
   
-  We offer luxury cars at a fraction of the local car rental
-  companies.`;
+  We offer luxury cars at a fraction of the local car rental companies.`;
+
+  const ceoText = `Badri has a background in computer science and engineering and has a master's from Carnegie Mellon University with a minor in business. He is a serial entrepreneur having exited successfully in one company and also built platform for another. Post that he started TakeMyCar in 2022.`;
+
+  const teamData = [
+    {
+      name: "Shriram",
+      desg: "Lead Software Developer",
+      img: "/images/team/shriram.png",
+    },
+    {
+      name: "Anirudh",
+      desg: "Senior Software Developer",
+      img: "/images/team/emoji.png",
+    },
+    {
+      name: "General Assembly",
+      desg: "UI/UX Design",
+      img: "/images/team/GA.jpg",
+    },
+    {
+      name: "Gobind Singh",
+      desg: "Website Developer",
+      img: "/images/team/gobind.jpg",
+    },
+  ];
+
   return (
     <div id="index">
       <Head>
@@ -179,18 +199,39 @@ export default function Home() {
       </section>
       <section id="team">
         <div className="ceo">
-          <div className="left-side">Some text</div>
+          <div className="left-side">{ceoText}</div>
           <div className="right-side">
-            <div className="img-container"></div>
-            <span className="head">Badri</span>
+            <div className="img-container">
+              <Image
+                layout="fill"
+                src="/images/team/badri.jpg"
+                alt="Badri takemycar ceo"
+                objectFit="cover"
+              />
+            </div>
+            <span className="head">BADRI NARAYAN</span>
             <span className="desg">Founder & CEO</span>
           </div>
         </div>
         <div className="full-team">
           <h2>All stars roster</h2>
-          <p>Some Description</p>
-          {/* {cards here} */}
+          <p>The perfect team</p>
+          <div className="cards">
+            {teamData.map((per, ind) => {
+              return (
+                <div className={"member card-" + ind} key={ind}>
+                  <div className="img-container">
+                    <Image src={per.img} layout="fill" objectFit="cover" />
+                  </div>
+                  <span className="name">{per.name}</span>
+                  <br />
+                  <span className="desg">{per.desg}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
+        <img src={"/images/layersss.png"} alt="" className="layer-img" />
       </section>
       <section id="contact"></section>
     </div>
