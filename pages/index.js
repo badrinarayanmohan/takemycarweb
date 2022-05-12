@@ -14,6 +14,8 @@ import "react-multi-carousel/lib/styles.css";
 import { Button, Form } from "react-bootstrap";
 import { CheckSquareFill } from "react-bootstrap-icons";
 
+import axios from "axios";
+
 export default function Home() {
   const aniData = [
     {
@@ -105,7 +107,9 @@ export default function Home() {
       img: "/images/team/gobind.jpg",
     },
   ];
-
+  //https://docs.google.com/forms/d/e/1FAIpQLSe01EK-bXIJWSxMmWZ6ojtZGnkbQpHV1Zt3Un-mzMAidL8Wjg/viewform?usp=sf_link
+  const formID = "1FAIpQLSe01EK-bXIJWSxMmWZ6ojtZGnkbQpHV1Zt3Un-mzMAidL8Wjg";
+  const nameIDs = ["519971175", "2078225853", "1198583035", "607901933"];
   var [NAME, setName] = useState("");
   const inputName = (inp) => {
     setName(inp.target.value);
@@ -122,6 +126,87 @@ export default function Home() {
   const inputMsg = (inp) => {
     setMsg(inp.target.value);
   };
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phonePattern = /^[0-9]{10}$/;
+
+  const io = [NAME, EMAIL, PHONE, MSG];
+
+  function handleSubmit() {
+    var urlAttr = "";
+    for (let i = 0; i < io.length; i++) {
+      //   :/?#[]@!$&'()*+,;=%
+      var temp = io[i]
+        .replace("%", "%25")
+        .replace(" ", "%20")
+        .replace(":", "%3A")
+        .replace("/", "%2F")
+        .replace("?", "%3F")
+        .replace("#", "%23")
+        .replace("[", "%5B")
+        .replace("]", "%5D")
+        .replace("@", "%40")
+        .replace("!", "%21")
+        .replace("$", "%24")
+        .replace("&", "%26")
+        .replace("'", "%27")
+        .replace("(", "%28")
+        .replace(")", "%29")
+        .replace("*", "%2A")
+        .replace("+", "%2B")
+        .replace(",", "%2C")
+        .replace(";", "%3B")
+        .replace("=", "%3D");
+      var temp2 = "entry." + nameIDs[i] + "=" + temp;
+      if (!(temp2 === " " || temp2 === "")) {
+        urlAttr += temp2;
+      }
+
+      if (i !== io.length - 1) {
+        urlAttr += "&";
+      }
+    }
+    for (let i = 0; i < io.length; i++) {
+      if (String(io[i]).trim() == "") {
+        alert("Please fill all fields before submitting!");
+        return null;
+      }
+    }
+    var url =
+      "https://docs.google.com/forms/d/e/" +
+      formID +
+      "/formResponse?" +
+      urlAttr;
+    console.log(url);
+    try {
+      axios
+        .post(url, null, null)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((axie) => {
+          console.log(axie);
+        });
+    } catch {}
+    return true;
+  }
+
+  function handleSubmitInit() {
+    setEmail(EMAIL.trim());
+    setPhone(PHONE.trim());
+    if (emailPattern.test(EMAIL)) {
+      if (phonePattern.test(PHONE)) {
+        if (handleSubmit() === true) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        alert("Please enter a valid phone number!");
+      }
+    } else {
+      alert("Please enter a valid email address!");
+    }
+  }
 
   return (
     <div id="index">
@@ -310,17 +395,21 @@ export default function Home() {
               </Form.Group>
               <Button
                 variant="light"
-                onClick={() => {
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
                   // call function subClick()
-                  console.log(NAME);
-                  console.log(EMAIL);
-                  console.log(PHONE);
-                  console.log(MSG);
-                  alert("Submitted");
-                  setName("");
-                  setEmail("");
-                  setPhone("");
-                  setMsg("");
+                  // console.log(NAME);
+                  // console.log(EMAIL);
+                  // console.log(PHONE);
+                  // console.log(MSG);
+                  if (handleSubmitInit()) {
+                    alert("Submitted");
+                    setName("");
+                    setEmail("");
+                    setPhone("");
+                    setMsg("");
+                  }
                 }}
               >
                 <span> Submit</span> <CheckSquareFill />

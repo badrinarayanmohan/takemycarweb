@@ -1,10 +1,15 @@
 import Link from "next/link";
 // delete this coment
 
-import { AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
+import {
+  AiFillLinkedin,
+  AiOutlineTwitter,
+  AiFillInstagram,
+} from "react-icons/ai";
 
 export default function Header() {
   var icon_color = "white";
+  var icon_color2 = "black";
   function navi() {
     try {
       document.querySelector("#header .ham").classList.toggle("ham-clicked");
@@ -54,14 +59,19 @@ export default function Header() {
         <Link href="/#contact">Contact</Link>
       </nav>
       <div className="right-side">
-        <Link href="https://google.com" target="_blank">
-          <a>
+        <Link href="https://www.linkedin.com/company/takemycar">
+          <a target="_blank">
             <AiFillLinkedin color={icon_color} className="no-mobile" />
           </a>
         </Link>
-        <Link href="https://google.com" target="_blank">
-          <a>
+        <Link href="https://twitter.com/TakeMyCar_Inc">
+          <a target="_blank">
             <AiOutlineTwitter color={icon_color} className="no-mobile" />
+          </a>
+        </Link>
+        <Link href="https://www.instagram.com/takemycar_inc">
+          <a target="_blank">
+            <AiFillInstagram color={icon_color} className="no-mobile" />
           </a>
         </Link>
         <div
@@ -113,6 +123,29 @@ export default function Header() {
               <Link href="/#contact" aria-label="Contact us">
                 Contact
               </Link>
+            </li>
+            <li
+              onClick={() => {
+                navi();
+              }}
+            >
+              <div className="side-nav-icons">
+                <Link href="https://www.linkedin.com/company/takemycar">
+                  <a target="_blank">
+                    <AiFillLinkedin color={icon_color2} />
+                  </a>
+                </Link>
+                <Link href="https://twitter.com/TakeMyCar_Inc">
+                  <a target="_blank">
+                    <AiOutlineTwitter color={icon_color2} />
+                  </a>
+                </Link>
+                <Link href="https://www.instagram.com/takemycar_inc">
+                  <a target="_blank">
+                    <AiFillInstagram color={icon_color2} />
+                  </a>
+                </Link>
+              </div>
             </li>
           </ul>
         </nav>
