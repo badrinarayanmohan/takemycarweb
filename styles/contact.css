@@ -1,0 +1,86 @@
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#contact h2 {
+  align-self: center;
+  font-size: 4rem;
+  font-family: "Jost", sans-serif;
+}
+.contact-data {
+  display: flex;
+  justify-content: center;
+}
+.BookContact {
+  background-color: black;
+  color: white;
+  align-self: center;
+  width: 25%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  padding: 30px;
+  /* text-shadow: 0 0 3px aliceblue, 0 0 2px aliceblue; */
+}
+.BookContact div {
+  width: fit-content;
+  /* margin: 7px; */
+  padding: 0;
+}
+.BookContact span {
+  /* background-color: rgba(240, 248, 255, 0.9); */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* padding: 30px; */
+  letter-spacing: 4px;
+  font-size: 15px;
+}
+.rule {
+  width: 1px;
+  box-shadow: 0 0 5px grey, 0 0 2px grey;
+  background-color: rgb(45, 45, 45);
+  border-radius: 2px;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+.BookForm {
+  width: 25%;
+}
+
+button {
+  border: 1px solid grey !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+button span {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .left-side {
+    width: 90%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .contact-data {
+    flex-direction: column;
+    align-items: center;
+  }
+  .BookContact span {
+    font-size: small;
+    padding: 20px;
+  }
+  .rule {
+    display: none;
+  }
+  .BookForm {
+    width: 90%;
+  }
+}

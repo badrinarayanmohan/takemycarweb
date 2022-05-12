@@ -3,6 +3,7 @@ import "../styles/header.css";
 import "../styles/home.css";
 import "../styles/about.css";
 import "../styles/team.css";
+import "../styles/contact.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/header/Header.js";

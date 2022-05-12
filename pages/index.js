@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -8,6 +9,9 @@ import moneyJSON from "/public/lottie/money.json";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+import { Button, Form } from "react-bootstrap";
+import { CheckSquareFill } from "react-bootstrap-icons";
 
 export default function Home() {
   const aniData = [
@@ -101,10 +105,31 @@ export default function Home() {
     },
   ];
 
+  var [NAME, setName] = useState("");
+  const inputName = (inp) => {
+    setName(inp.target.value);
+  };
+  var [EMAIL, setEmail] = useState("");
+  const inputEmail = (inp) => {
+    setEmail(inp.target.value);
+  };
+  var [PHONE, setPhone] = useState("");
+  const inputPhone = (inp) => {
+    setPhone(inp.target.value);
+  };
+  var [MSG, setMsg] = useState("");
+  const inputMsg = (inp) => {
+    setMsg(inp.target.value);
+  };
+
   return (
     <div id="index">
       <Head>
         <title>TAKEMYCAR</title>
+        <meta
+          name="description"
+          content="India's first peer to peer car rental platform"
+        />
       </Head>
       <section id="home">
         <img src={"/images/layersss.png"} alt="" className="layers-img" />
@@ -233,7 +258,76 @@ export default function Home() {
         </div>
         <img src={"/images/layersss.png"} alt="" className="layer-img" />
       </section>
-      <section id="contact"></section>
+      <section id="contact">
+        <h2>Contact us</h2>
+        <div className="contact-data">
+          <div className="left-side BookContact">
+            <span>+91 94449 85805</span>
+            <br />
+            <span>contact@takemycar.us</span>
+          </div>
+          <div className="rule"></div>
+          <div className="BookForm">
+            <Form>
+              <Form.Group className="name mb-3">
+                <Form.Label>Full Name</Form.Label>
+                <Form.Control
+                  type="name"
+                  placeholder="Please enter your full name."
+                  onChange={inputName}
+                  value={NAME}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group className="email mb-3">
+                <Form.Label>E-mail</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Please enter your e-mail address."
+                  onChange={inputEmail}
+                  value={EMAIL}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group className="phone mb-3">
+                <Form.Label>Phone</Form.Label>
+                <Form.Control
+                  type="tel"
+                  placeholder="Please enter your phone number."
+                  onChange={inputPhone}
+                  value={PHONE}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group className="message mb-3">
+                <Form.Label>Message</Form.Label>
+                <Form.Control
+                  type="message"
+                  as="textarea"
+                  rows={10}
+                  placeholder="Please type your message."
+                  onChange={inputMsg}
+                  value={MSG}
+                ></Form.Control>
+              </Form.Group>
+              <Button
+                variant="light"
+                onClick={() => {
+                  // call function subClick()
+                  console.log(NAME);
+                  console.log(EMAIL);
+                  console.log(PHONE);
+                  console.log(MSG);
+                  alert("Submitted");
+                  setName("");
+                  setEmail("");
+                  setPhone("");
+                  setMsg("");
+                }}
+              >
+                <span> Submit</span> <CheckSquareFill />
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
