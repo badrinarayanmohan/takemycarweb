@@ -74,7 +74,7 @@
   padding-right: 25%;
 }
 
-#about .all-content .heading span {
+#about .all-content .heading > span {
   font-size: medium;
   color: blueviolet;
   letter-spacing: 7px;
@@ -140,7 +140,7 @@
     padding-right: 5%;
   }
 
-  #about .all-content .heading span {
+  #about .all-content .heading > span {
     font-size: medium;
     color: blueviolet;
     letter-spacing: 7px;
