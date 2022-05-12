@@ -32,26 +32,6 @@ export default function Home() {
       aniJson: moneyJSON,
     },
   ];
-  // const responsiveDataCar = {
-  //   superLargeDesktop: {
-  //     // the naming can be any, depends on you.
-  //     breakpoint: { max: 4000, min: 3000 },
-  //     items: 5,
-  //   },
-  //   desktop: {
-  //     breakpoint: { max: 3000, min: 1024 },
-  //     items: 3,
-  //   },
-  //   tablet: {
-  //     breakpoint: { max: 1024, min: 464 },
-  //     items: 2,
-  //   },
-  //   mobile: {
-  //     breakpoint: { max: 464, min: 0 },
-  //     items: 1,
-  //   },
-  // };
-
   const responsiveDataCar = {
     pc: {
       breakpoint: {
@@ -82,6 +62,25 @@ export default function Home() {
     "/images/presentation/11.png",
     "/images/presentation/12.png",
   ];
+  const homeHeadText = `India's first
+  most derisked
+  peer to peer
+  car sharing
+  platform & service.`;
+
+  const aboutText = `TakeMyCar's founder's vision is to always bring software to
+  everyone in the globe at very affordable prices. Having worked on
+  his first firm where he built software for small to middle scale
+  enterprises and sold software at one tenth the costs, similarly
+
+  TakeMyCar's vision is to bring cars and its related software at a
+  very cheap price.
+
+  TakeMyCar was born when the founder himself had this problem and
+  hence this company was formed.
+  
+  We offer luxury cars at a fraction of the local car rental
+  companies.`;
   return (
     <div id="index">
       <Head>
@@ -91,11 +90,14 @@ export default function Home() {
         <img src={"/images/layersss.png"} alt="" className="layers-img" />
         <div className="left-side">
           <h2>
-            India's first <br />
-            most derisked <br />
-            peer to peer <br />
-            car sharing <br />
-            platform & service.
+            {homeHeadText.split("\n").map((text, ind) => {
+              return (
+                <span key={ind}>
+                  {text}
+                  <br />
+                </span>
+              );
+            })}
           </h2>
           <p>App will launch on June 15, 2022.</p>
         </div>
@@ -128,22 +130,14 @@ export default function Home() {
             <span>ABOUT US</span>
             <h2>We make sh*t happen</h2>
             <p>
-              TakeMyCar's founder's vision is to always bring software to
-              everyone in the globe at very affordable prices. Having worked on
-              his first firm where he built software for small to middle scale
-              enterprises and sold software at one tenth the costs, similarly
-              <br />
-              <br />
-              TakeMyCar's vision is to bring cars and its related software at a
-              very cheap price.
-              <br />
-              <br />
-              TakeMyCar was born when the founder himself had this problem and
-              hence this company was formed.
-              <br />
-              <br />
-              We offer luxury cars at a fraction of the local car rental
-              companies.
+              {aboutText.split("\n").map((text, ind) => {
+                return (
+                  <span key={ind}>
+                    {text}
+                    <br />
+                  </span>
+                );
+              })}
             </p>
           </div>
         </div>
