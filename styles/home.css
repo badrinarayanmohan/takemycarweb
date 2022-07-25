@@ -28,9 +28,31 @@
 }
 
 #home .left-side h2 {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: right;
   font-weight: 600;
+}
+
+#home .left-side .main-button-anchor{
+  height: auto;
+  width: fit-content;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  isolation: isolate;
+  margin-left: auto;
+}
+
+#home .left-side .main-button{
+  padding: 5px 10px;
+  background-color: #FEE961;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: auto;
 }
 
 #home .left-side p {

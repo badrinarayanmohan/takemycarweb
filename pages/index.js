@@ -230,7 +230,10 @@ export default function Home() {
               );
             })}
           </h2>
-          <p>App will launch on June 15, 2022.</p>
+          <p>App will launch on August 2nd, 2022.</p>
+          <a href="https://linktr.ee/takemycar" target="_blank" rel="noopener noreferrer" className="main-button-anchor">
+            <button className="main-button">Download now!</button>
+          </a>
         </div>
         <div className="right-side">
           <img src={"/images/iphone.png"} alt="" />
