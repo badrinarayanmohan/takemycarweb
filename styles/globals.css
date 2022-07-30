@@ -28,6 +28,10 @@ a {
   scroll-behavior: smooth;
 }
 
+#TOS > div {
+  width: 80%;
+}
+
 @media screen and (min-width: 800px) {
   .no-pc {
     display: none !important;
@@ -39,5 +43,8 @@ a {
   .no-mobile {
     display: none !important;
     visibility: hidden !important;
+  }
+  #TOS > div {
+    width: 100%;
   }
 }
